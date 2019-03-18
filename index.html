@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ionic 4</title>
+    <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+    <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://cdn.iconscout.com/icon/free/png-256/ionic-4-1175016.png" type="image/x-icon">
+    <style>
+        ion-item:hover{
+            ion-icon.removeItem{
+                display: visible;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary" text-left>
+                <ion-title>
+                    Udemy Course List
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>
+                                    Courses
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Name</ion-label>
+                                    <ion-input type="text" id="input-name"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Rating (0-5)</ion-label>
+                                    <ion-input type="number" id="input-rating"></ion-input>
+                                </ion-item>
+                                <div margin-vertical text-right>
+                                    <ion-button fill="clear" color="danger" id="btn-cancel">
+                                        Reset
+                                    </ion-button>
+                                    <ion-button fill="outline" color="success" id="btn-confirm">
+                                        <ion-icon slot="start" name="add"></ion-icon>Add
+                                    </ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-list id="courses-list"></ion-list>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-app>
+    <ion-alert-controller></ion-alert-controller>
+    <script src="app.js"></script>
+</body>
+
+</html>
